@@ -1,0 +1,9 @@
+node_modules/
+.orca-agents/
+.agent-work/
+*.log
+
+# Local config (created from config/*.template.json when missing)
+config/providers.json
+config/roles.json
+config/rules.json

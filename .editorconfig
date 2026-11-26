@@ -1,0 +1,6 @@
+root = true
+
+[*.{ts,mjs,json}]
+indent_style = tab
+indent_size = tab
+tab_width = 2

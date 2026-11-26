@@ -1,0 +1,22 @@
+{
+	"name": "orca-agents",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Usage-aware Orca team with an architect, full and lite reviewers, and senior and junior backend developers.",
+	"type": "module",
+	"bin": {
+		"orca-agents": "bin/orca-agents.mjs"
+	},
+	"engines": {
+		"node": ">=22.18.0"
+	},
+	"scripts": {
+		"start": "node src/cli.ts",
+		"test": "node --test \"test/**/*.test.ts\"",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.0",
+		"typescript": "^5.8.0"
+	}
+}

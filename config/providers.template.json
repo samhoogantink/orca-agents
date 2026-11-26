@@ -1,0 +1,50 @@
+{
+	"$comment": "Providers the router can pick from. 'orcaAgent' is the id Orca's --agent flag takes (see `orca agent installed --json`). Keys starting with $ are ignored.",
+	"unknownUsage": "allow",
+	"providers": {
+		"codex": {
+			"enabled": false,
+			"orcaAgent": "codex",
+			"supportsModelFlag": true,
+			"usage": { "probe": "codex-app-server" },
+			"vendors": { "default": "openai" },
+			"limits": {
+				"included": { "maxUsedPercent": 85 },
+				"extra": { "enabled": false }
+			},
+			"cooldownMinutes": 60
+		},
+		"copilot": {
+			"enabled": false,
+			"orcaAgent": "copilot",
+			"$comment": "Orca's worker-start does not pass --model to Copilot. Set COPILOT_MODEL in Orca Settings > Agents > GitHub Copilot > Environment, or 'model' in ~/.copilot/settings.json.",
+			"supportsModelFlag": false,
+			"usage": { "probe": "copilot-cli" },
+			"vendors": {
+				"$comment": "Copilot runs models from several vendors. Reviews always run on a model from another vendor than the code's author, so set \"default\" to the vendor of your COPILOT_MODEL (openai, anthropic, google). Until then Copilot cannot review, and code it wrote cannot be reviewed."
+			},
+			"limits": {
+				"$comment": "Included = premium requests in your plan. Extra = premium requests billed beyond the allowance (only if you allow paid premium requests in GitHub).",
+				"included": { "maxUsedPercent": 90 },
+				"extra": { "enabled": true, "maxSpendUsd": 10 }
+			},
+			"models": {
+				"$comment": "Mark models with a 0x multiplier on your plan as \"free\", e.g. \"<model id>\": \"free\".",
+				"default": "included"
+			},
+			"cooldownMinutes": 120
+		},
+		"claude": {
+			"enabled": true,
+			"orcaAgent": "claude",
+			"supportsModelFlag": true,
+			"usage": { "probe": "claude-cli" },
+			"vendors": { "default": "anthropic" },
+			"limits": {
+				"included": { "maxUsedPercent": 85 },
+				"extra": { "enabled": false }
+			},
+			"cooldownMinutes": 60
+		}
+	}
+}

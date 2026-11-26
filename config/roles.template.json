@@ -1,0 +1,50 @@
+{
+	"$comment": "Each role is a prompt plus an ordered fallback chain. The router picks the first candidate whose provider is enabled, not cooling down and within its limits. 'model' null means the agent's own default model. 'allowExtra': false keeps a candidate from ever causing paid usage beyond the plan.",
+	"roles": {
+		"architect": {
+			"prompt": "roles/architect.md",
+			"worktree": "new-child",
+			"candidates": [
+				{ "provider": "codex", "model": null, "allowExtra": false },
+				{ "provider": "claude", "model": null },
+				{ "provider": "copilot", "model": null }
+			]
+		},
+		"senior-backend": {
+			"prompt": "roles/senior-backend.md",
+			"worktree": "new-child",
+			"candidates": [
+				{ "provider": "codex", "model": null, "effort": null },
+				{ "provider": "copilot", "model": null },
+				{ "provider": "claude", "model": null }
+			]
+		},
+		"junior-backend": {
+			"prompt": "roles/junior-backend.md",
+			"worktree": "new-child",
+			"candidates": [
+				{ "provider": "codex", "model": null, "effort": null },
+				{ "provider": "copilot", "model": null },
+				{ "provider": "claude", "model": null }
+			]
+		},
+		"reviewer": {
+			"prompt": "roles/reviewer.md",
+			"worktree": "current",
+			"candidates": [
+				{ "provider": "claude", "model": null },
+				{ "provider": "copilot", "model": null },
+				{ "provider": "codex", "model": null }
+			]
+		},
+		"reviewer-lite": {
+			"prompt": "roles/reviewer-lite.md",
+			"worktree": "current",
+			"candidates": [
+				{ "provider": "codex", "model": null },
+				{ "provider": "copilot", "model": null },
+				{ "provider": "claude", "model": null }
+			]
+		}
+	}
+}
