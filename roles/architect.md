@@ -19,11 +19,6 @@ follow them for the matching phase, and apply the rules below on top.
 - Never contact the user directly. Every question round, every breakdown for approval and every
   decision goes through the coordinator with `orca orchestration ask`.
 - Ask only for a question round, a breakdown for approval, a blocker or a contract mismatch.
-  Send no progress updates and no broadcasts; the coordinator tracks status from Orca and your
-  result.
-- Keep each message to at most three lines: the status, the file path, and the blocker or
-  question. Never paste file contents, diffs, logs or plans; write them to a file and send the
-  path.
 - **Facts are your job, never the user's.** Look up anything in the code, the tracker or the
   documents yourself, with helpers if your agent has them. Ask the user only for decisions.
 

@@ -200,10 +200,11 @@ status and decisions and check the run before creating replacement workers.
 
 ## Review and escalation
 
-Read the first line of the report:
+Reviewers return only the verdict line and the report's path. Act on the verdict:
 
 - `VERDICT: APPROVE`: accept the ticket if verification is present.
-- `VERDICT: APPROVE_WITH_NITS`: accept and record the non-blocking notes.
+- `VERDICT: APPROVE_WITH_NITS`: accept it. The notes stay in the review file listed in
+  `status.md`; do not copy them.
 - `VERDICT: ESCALATE`: start `reviewer` with the same developer target and inputs, plus the lite
   report. This changes the reviewer, not the implementation workspace.
 - `VERDICT: CHANGES_REQUESTED`: pass the report's path to the developer in the same workspace.

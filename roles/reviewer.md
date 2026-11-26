@@ -81,7 +81,8 @@ would need to check.
 ## Output
 
 Save a new report at the path the coordinator gives (`reviews/<ticket>-<round>.md`); never overwrite
-an earlier review. Return its absolute path and the full report through Orca.
+an earlier review. Return only the first line and the report's absolute path through Orca; the
+coordinator reads the report only when the next step needs it.
 
 - **First line** of the report and of the worker result: `VERDICT: APPROVE`,
   `VERDICT: APPROVE_WITH_NITS` or `VERDICT: CHANGES_REQUESTED`, followed by the ticket ID.
